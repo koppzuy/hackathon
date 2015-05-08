@@ -11,7 +11,8 @@
         <StackPanel>
             <TextBlock Text="Pader-Pander" FontSize="20"></TextBlock>
             <Button Name="ProximitySearch" Click="ProximitySearch_Click" Width="200" Height="40">Umkreissuche</Button>
-            <Button Name="WhereIsTheBengel" Click="WhereIsTheBengel_Click" Width="200" Height="40">Wo ist der Bengel?</Button>            
+            <Button Name="WhereIsTheBengel" Click="WhereIsTheBengel_Click" Width="200" Height="40">Wo ist der Bengel?</Button>
+            <Button Name="RealTimeStop" Click="RealTimeStop_Click" Width="200" Height="40">Realtime Stop</Button>
         </StackPanel>        
     </Grid>
 </Page>

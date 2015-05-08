@@ -30,12 +30,17 @@ namespace Padersprinter
 
         private void ProximitySearch_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(LocalMapPage));
+            Frame.Navigate(typeof(LocalMapPage));            
         }
 
         private void WhereIsTheBengel_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Bengel));
+        }
+
+        private void RealTimeStop_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RealTimeStop));
         }
     }
 }
