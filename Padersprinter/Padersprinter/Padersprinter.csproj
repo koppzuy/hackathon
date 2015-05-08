@@ -150,6 +150,12 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PadersprinterService\PadersprinterService.csproj">
+      <Project>{ea5b5c76-997c-4ffc-8300-bcb7087c293f}</Project>
+      <Name>PadersprinterService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
