@@ -20,7 +20,7 @@
     <AppXManifest Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-08T17:56:44.487</Modified>
+      <Modified>2015-05-08T19:29:47.313</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -76,13 +76,17 @@
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
       <Modified>2015-04-18T04:59:50.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\Padersprinter.csproj.AppLocalNetFX.GenerateResource.Cache">
+      <PackagePath>Padersprinter.csproj.AppLocalNetFX.GenerateResource.Cache</PackagePath>
+      <Modified>2015-05-08T17:56:46.356</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\Padersprinter.exe">
       <PackagePath>Padersprinter.exe</PackagePath>
-      <Modified>2015-05-08T17:56:43.979</Modified>
+      <Modified>2015-05-08T19:29:47.131</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\Padersprinter.xr.xml">
       <PackagePath>Padersprinter.xr.xml</PackagePath>
-      <Modified>2015-05-08T17:56:43.568</Modified>
+      <Modified>2015-05-08T19:23:41.707</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -90,7 +94,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-08T17:56:46.887</Modified>
+      <Modified>2015-05-08T19:29:47.846</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>

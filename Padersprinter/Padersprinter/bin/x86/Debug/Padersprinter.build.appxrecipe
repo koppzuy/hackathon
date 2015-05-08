@@ -55,6 +55,9 @@
     <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\Padersprinter.csproj.AppLocalNetFX.GenerateResource.Cache">
+      <PackagePath>Padersprinter.csproj.AppLocalNetFX.GenerateResource.Cache</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hackathon\Padersprinter\Padersprinter\bin\x86\Debug\Core\Padersprinter.exe">
       <PackagePath>Padersprinter.exe</PackagePath>
     </AppxPackagedFile>
