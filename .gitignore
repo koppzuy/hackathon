@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Padersprinter/Padersprinter/obj/x86/Debug
+/Padersprinter/Padersprinter/bin/x86/Debug
