@@ -6,24 +6,37 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" >
-            <TextBox Text="Linie" />
-            <TextBox Text="{Binding Linie}" />
-        </StackPanel>
-        <ListView ItemsSource="{Binding Items}" Grid.Row="1">
+        <Button Content="Back" Click="Button_Click" Grid.Row="0"/>
+        <Grid Margin="15" Grid.Row="1" BorderBrush="Gray" BorderThickness="4" >   
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock FontWeight="Bold" Text="Linie" Margin="5" Grid.Column="0"/>
+            <ComboBox ItemsSource="{Binding Stops}" Margin="5" SelectedValue="{Binding ItemSelected, Mode=TwoWay}" Grid.Column="1" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch"> 
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+        <ListView Margin="15" ItemsSource="{Binding Items}" Grid.Row="2" BorderBrush="Gray" BorderThickness="4">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Nummer}" />
-                        <TextBlock Text="{Binding Name}" />
-                        <TextBlock Text="{Binding ArivalTime}" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <TextBlock Margin="5" Text="{Binding TripStatus}" />
+                        <TextBlock FontWeight="Bold"  Margin="5" Text="{Binding RouteName}" />
+                        <TextBlock Margin="0,5,0,5" Text=" Richtung " />
+                        <TextBlock Margin="5" Text="{Binding Direction}" />
+                        <TextBlock Margin="0,5,0,5" Text="in " />
+                        <TextBlock Margin="5" Text="{Binding MixedTime}" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

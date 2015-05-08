@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Padersprinter.ViewModels;
 using PadersprinterService;
 using PadersprinterService.Parsing;
@@ -27,14 +28,20 @@ namespace Padersprinter
     {
         public RealTimeStop()
         {
-            this.InitializeComponent();            
-            this.GetDummyStop();
-            this.DataContext = new RealTimeStopViewModel(7);
+            this.InitializeComponent();
+            //this.GetDummyStop();
+            this.DataContext = new RealTimeStopViewModel(1001);
         }
 
         private async void GetDummyStop()
         {
-            Stop s = (await Parser.FindStopsByNameAsync("Westerntor")).FirstOrDefault<Stop>();
+            Stop s = (await Parser.FindStopsByNameAsync("Hauptbahnhof")).FirstOrDefault<Stop>();
+            string x = null;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
         }
     }
 }
