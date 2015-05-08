@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PadersprinterService</name>
+    </assembly>
+    <members>
+        <member name="T:PadersprinterService.DataModel.RouteInfo">
+            <summary>
+            Contains a collection of routes.
+            </summary>
+        </member>
+        <member name="P:PadersprinterService.DataModel.RouteInfo.Routes">
+            <summary>
+            The routes.
+            </summary>
+        </member>
+        <member name="T:PadersprinterService.DataModel.TripStatus">
+            <summary>
+            The status of a travelling vehicle.
+            </summary>
+        </member>
+        <member name="F:PadersprinterService.DataModel.TripStatus.Departed">
+            <summary>
+            The vehicle has departed from a stop.
+            </summary>
+        </member>
+        <member name="F:PadersprinterService.DataModel.TripStatus.Stopping">
+            <summary>
+            The vehicle is currently stopping at a stop.
+            </summary>
+        </member>
+        <member name="F:PadersprinterService.DataModel.TripStatus.Predicted">
+            <summary>
+            The stop time is predicted.
+            </summary>
+        </member>
+        <member name="F:PadersprinterService.DataModel.TripStatus.Unknown">
+            <summary>
+            The status is unknown.
+            </summary>
+        </member>
+        <member name="T:PadersprinterService.DataModel.LocationInfo">
+            <summary>
+            The result of a location based query.
+            </summary>
+        </member>
+        <member name="P:PadersprinterService.DataModel.LocationInfo.Stops">
+            <summary>
+            The stops found by the query.
+            </summary>
+        </member>
+        <member name="T:PadersprinterService.DataModel.SearchResult">
+            <summary>
+            Autocompletion search result.
+            </summary>
+        </member>
+        <member name="P:PadersprinterService.DataModel.SearchResult.ID">
+            <summary>
+            The ID associated with the search result.
+            In case of a stop, this is the stop's short name.
+            In case of a route, this is the route's ID.
+            </summary>
+        </member>
+        <member name="T:PadersprinterService.Stop">
+            <summary>
+            Haltestelle.
+            Ist z.B. Teil von http://www.padersprinter.de/internetservice/services/tripInfo/tripPassages
+            </summary>
+        </member>
+        <member name="T:PadersprinterService.DataModel.TripInfo">
+            <summary>
+            Returned by http://www.padersprinter.de/internetservice/services/tripInfo/tripPassages
+            </summary>
+        </member>
+        <member name="P:PadersprinterService.DataModel.TripInfo.RouteName">
+            <summary>
+            Route name.
+            </summary>
+        </member>
+        <member name="P:PadersprinterService.DataModel.TripInfo.Direction">
+            <summary>
+            Direction name.
+            </summary>
+        </member>
+        <member name="P:PadersprinterService.DataModel.TripInfo.Actual">
+            <summary>
+            Current and upcoming stops.
+            </summary>
+        </member>
+        <member name="P:PadersprinterService.DataModel.TripInfo.Old">
+            <summary>
+            Stops in the past.
+            </summary>
+        </member>
+        <member name="T:PadersprinterService.Parsing.Parser">
+            <summary>
+            Provides methods to access the Padersprinter Web API.
+            </summary>
+        </member>
+        <member name="M:PadersprinterService.Parsing.Parser.FindStopsByNameAsync(System.String)">
+            <summary>
+            Finds bus stops matching the specified query text.
+            </summary>
+            <param name="query">Query string</param>
+            <returns>Array of Stop objects</returns>
+        </member>
+        <member name="M:PadersprinterService.Parsing.Parser.FindStopsByLocationAsync(PadersprinterService.BasicPosition,System.Int32)">
+            <summary>
+            Finds bus stops matching the area specified by center location and radius.
+            </summary>
+            <param name="pos">Position</param>
+            <param name="radius">Rectangular search "radius" in kilometers</param>
+            <returns>Array of Stop objects</returns>
+        </member>
+        <member name="M:PadersprinterService.Parsing.Parser.GetRealTimeDepartureInfoAsync(System.Int32,PadersprinterService.Parsing.DirectionMode)">
+            <summary>
+            Gets a RealTimeDepartureInfo object containing information about
+            future arrivals or departures of vehicles.
+            </summary>
+            <param name="stopShortName">Stop short name</param>
+            <param name="mode">Direction mode</param>
+            <returns>RealTimeDepartureInfo</returns>
+        </member>
+        <member name="M:PadersprinterService.Parsing.Parser.GetRealTimeDepartureInfoAsync(System.Int32,PadersprinterService.Parsing.DirectionMode,System.DateTime,System.DateTime)">
+            <summary>
+            Gets a RealTimeDepartureInfo object containing information about
+            future arrivals or departures of vehicles.
+            </summary>
+            <param name="stopShortName">Stop short name</param>
+            <param name="mode">Direction mode</param>
+            <param name="startTime">Start time</param>
+            <param name="endTime">End time</param>
+            <returns>RealTimeDepartureInfo</returns>
+        </member>
+        <member name="M:PadersprinterService.Parsing.Parser.GetStopFromShortNameAsync(System.Int32)">
+            <summary>
+            Returns a Stop related to the specified short name
+            including longitude and latitude information.
+            </summary>
+            <param name="stopShortName">Stop short name</param>
+            <returns>Stop</returns>
+        </member>
+        <member name="M:PadersprinterService.Parsing.Parser.GetTripInfoAsync(System.Int64,PadersprinterService.Parsing.DirectionMode)">
+            <summary>
+            Returns trip information for the specified trip.
+            The resulting TripInfo object contains a list of all the stops
+            on the specified trip with predicted arrival or departure times.
+            </summary>
+            <param name="tripID">Trip ID (can be obtained from an ActualInfo object)</param>
+            <param name="mode">Determines whether departure or arrival times are obtained</param>
+            <returns></returns>
+        </member>
+        <member name="M:PadersprinterService.Parsing.Parser.GetAllRoutesAsync">
+            <summary>
+            Gets a collection of all defined routes.
+            </summary>
+            <returns>Array of Route objects</returns>
+        </member>
+    </members>
+</doc>
