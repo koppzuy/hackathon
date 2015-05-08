@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Padersprinter.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +23,19 @@ namespace Padersprinter
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public string DepartureLocation { get; set; }
-        public string ArrivalLocation { get; set; }
-
         public MainPage()
         {
             this.InitializeComponent();
         }
 
+        private void ProximitySearch_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(LocalMapPage));
+        }
 
+        private void WhereIsTheBengel_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Bengel));
+        }
     }
 }

@@ -8,34 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Margin="30" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="7*"/>
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
-            <TextBox Text="{Binding DepartureLocation}" Width="200" PlaceholderText="Departure Location"></TextBox>
-            <TextBlock> to</TextBlock>
-            <TextBox Text="{Binding ArrivalLocation}" Width="200" PlaceholderText="Arrival Location"></TextBox>
-        </StackPanel>
-
-        <Button Grid.Row="1" Grid.Column="0" Command="{Binding GetCurrentGeolocation}">My Position</Button>
-        <Button Grid.Row="1" Grid.Column="1" Command="{Binding StartSearch}">Search</Button>
-
-        <ListView ItemsSource="{Binding Results}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding}"></TextBlock>
-                        <TextBlock Text=""></TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel>
+            <TextBlock Text="Pader-Pander" FontSize="20"></TextBlock>
+            <Button Name="ProximitySearch" Click="ProximitySearch_Click" Width="200" Height="40">Umkreissuche</Button>
+            <Button Name="WhereIsTheBengel" Click="WhereIsTheBengel_Click" Width="200" Height="40">Wo ist der Bengel?</Button>            
+        </StackPanel>        
     </Grid>
 </Page>
