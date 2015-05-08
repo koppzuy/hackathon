@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -23,6 +25,7 @@ namespace Padersprinter
     /// </summary>
     public sealed partial class Bengel : Page
     {
+       
 
         public Bengel()
         {
@@ -32,12 +35,14 @@ namespace Padersprinter
 
         private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            string selectedItemName = ((ComboBox)sender).SelectedItem.ToString();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.GoBack();
         }
+        
+        
     }
 }

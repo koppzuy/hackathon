@@ -25,6 +25,6 @@
 
         <TextBlock Grid.Column="0" Grid.Row="1">Linie</TextBlock>
         <ComboBox x:Name="comboBox1" SelectionChanged="comboBox1_SelectionChanged" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding BusLinien}"/>
-        <Maps:MapControl HorizontalAlignment="Left" Margin="15,0,0,0" Height="580" Width="450" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Maps:MapControl Center="{Binding Location}" HorizontalAlignment="Left" Margin="15,0,0,0" Height="580" Width="450" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>
