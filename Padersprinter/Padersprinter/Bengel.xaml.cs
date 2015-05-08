@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Padersprinter.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +23,21 @@ namespace Padersprinter
     /// </summary>
     public sealed partial class Bengel : Page
     {
+
         public Bengel()
         {
             this.InitializeComponent();
+            this.DataContext = new BengelViewmodel();
         }
 
         private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
         }
     }
 }
