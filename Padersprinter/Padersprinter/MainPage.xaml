@@ -7,7 +7,27 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-       
+    <Grid Margin="30" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBox Text="{Binding DepartureLocation}" Width="200" PlaceholderText="Departure Location" ></TextBox>
+            <TextBox Text="{Binding ArrivalLocation}" Width="200" PlaceholderText="Arrival Location"></TextBox>
+        </StackPanel>
+        
+        <Button Command="{Binding StartSearch}">Search</Button>
+        
+        <ListView ItemsSource="{Binding Results}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding}"></TextBlock>
+                        <TextBlock Text=""></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
