@@ -108,6 +108,7 @@
     <Compile Include="RealTimeStop.xaml.cs">
       <DependentUpon>RealTimeStop.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BengelViewmodel.cs" />
     <Compile Include="ViewModels\RealTimeStopViewModel.cs" />
     <Compile Include="ViewModels\SearchResultViewModel.cs" />
     <Compile Include="ViewModels\TripViewModel.cs" />
