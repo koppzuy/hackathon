@@ -132,15 +132,17 @@ namespace Padersprinter.Padersprinter_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
+            _typeNameTable = new string[4];
             _typeNameTable[0] = "Padersprinter.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "String";
 
-            _typeTable = new global::System.Type[3];
+            _typeTable = new global::System.Type[4];
             _typeTable[0] = typeof(global::Padersprinter.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::System.String);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -190,6 +192,8 @@ namespace Padersprinter.Padersprinter_XamlTypeInfo
             case 0:   //  Padersprinter.MainPage
                 userType = new global::Padersprinter.Padersprinter_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
+                userType.AddMemberName("DepartureLocation");
+                userType.AddMemberName("ArrivalLocation");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -201,16 +205,56 @@ namespace Padersprinter.Padersprinter_XamlTypeInfo
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::Padersprinter.Padersprinter_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 3:   //  String
+                xamlType = new global::Padersprinter.Padersprinter_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
             }
             return xamlType;
         }
 
 
+        private object get_0_MainPage_DepartureLocation(object instance)
+        {
+            var that = (global::Padersprinter.MainPage)instance;
+            return that.DepartureLocation;
+        }
+        private void set_0_MainPage_DepartureLocation(object instance, object Value)
+        {
+            var that = (global::Padersprinter.MainPage)instance;
+            that.DepartureLocation = (global::System.String)Value;
+        }
+        private object get_1_MainPage_ArrivalLocation(object instance)
+        {
+            var that = (global::Padersprinter.MainPage)instance;
+            return that.ArrivalLocation;
+        }
+        private void set_1_MainPage_ArrivalLocation(object instance, object Value)
+        {
+            var that = (global::Padersprinter.MainPage)instance;
+            that.ArrivalLocation = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Padersprinter.Padersprinter_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::Padersprinter.Padersprinter_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Padersprinter.MainPage.DepartureLocation":
+                userType = (global::Padersprinter.Padersprinter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Padersprinter.MainPage");
+                xamlMember = new global::Padersprinter.Padersprinter_XamlTypeInfo.XamlMember(this, "DepartureLocation", "String");
+                xamlMember.Getter = get_0_MainPage_DepartureLocation;
+                xamlMember.Setter = set_0_MainPage_DepartureLocation;
+                break;
+            case "Padersprinter.MainPage.ArrivalLocation":
+                userType = (global::Padersprinter.Padersprinter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Padersprinter.MainPage");
+                xamlMember = new global::Padersprinter.Padersprinter_XamlTypeInfo.XamlMember(this, "ArrivalLocation", "String");
+                xamlMember.Getter = get_1_MainPage_ArrivalLocation;
+                xamlMember.Setter = set_1_MainPage_ArrivalLocation;
+                break;
+            }
             return xamlMember;
         }
     }

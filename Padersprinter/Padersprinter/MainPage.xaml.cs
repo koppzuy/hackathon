@@ -22,9 +22,14 @@ namespace Padersprinter
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public string DepartureLocation { get; set; }
+        public string ArrivalLocation { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
         }
+
+
     }
 }

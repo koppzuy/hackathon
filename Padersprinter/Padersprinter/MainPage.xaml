@@ -11,14 +11,22 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <TextBox Text="{Binding DepartureLocation}" Width="200" PlaceholderText="Departure Location" ></TextBox>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+            <TextBox Text="{Binding DepartureLocation}" Width="200" PlaceholderText="Departure Location"></TextBox>
+            <TextBlock> to</TextBlock>
             <TextBox Text="{Binding ArrivalLocation}" Width="200" PlaceholderText="Arrival Location"></TextBox>
         </StackPanel>
-        
-        <Button Command="{Binding StartSearch}">Search</Button>
-        
+
+        <Button Grid.Row="1" Grid.Column="0" Command="{Binding GetCurrentGeolocation}">My Position</Button>
+        <Button Grid.Row="1" Grid.Column="1" Command="{Binding StartSearch}">Search</Button>
+
         <ListView ItemsSource="{Binding Results}">
             <ListView.ItemTemplate>
                 <DataTemplate>
