@@ -5,6 +5,7 @@
     xmlns:local="using:Padersprinter"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d">
 
     <Grid Margin="20">
@@ -13,20 +14,17 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0">Wo ist der Bengel?</TextBlock>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0">Linie</TextBlock>
-            <ComboBox x:Name="comboBox1" SelectionChanged="comboBox1_SelectionChanged" Width="100" Grid.Column="1">
-                <x:String>Item 1</x:String>
-                <x:String>Item 2</x:String>
-                <x:String>Item 3</x:String>
-            </ComboBox>
-        </Grid>
-        <Rectangle Width="500" Height="500" Grid.Row="2" Fill="AliceBlue"/>
+
+        <Button Name="BackButton" Click="BackButton_Click" Grid.Row="0" Grid.Column="0">Back</Button>
+        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">Wo ist der Bengel?</TextBlock>
+
+        <TextBlock Grid.Column="0" Grid.Row="1">Linie</TextBlock>
+        <ComboBox x:Name="comboBox1" SelectionChanged="comboBox1_SelectionChanged" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding BusLinien}"/>
+        <Maps:MapControl Center="{Binding Location}" HorizontalAlignment="Left" Margin="15,0,0,0" Height="580" Width="450" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>
