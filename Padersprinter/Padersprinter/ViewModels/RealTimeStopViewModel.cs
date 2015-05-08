@@ -14,19 +14,49 @@ namespace Padersprinter.ViewModels
 {
     class RealTimeStopViewModel : BindableBase
     {
-        private int stopShortName;
         private Stop stop;
+        private ObservableCollection<Stop> stops = new ObservableCollection<Stop>();
         private ObservableCollection<ActualInfo> items = new ObservableCollection<ActualInfo>();
-        
+        private int stopShortName;
+
+
+        private Stop itemSelected;
+
+        public Stop ItemSelected
+        {
+            get
+            {
+                return this.itemSelected;
+            }
+            set
+            {
+                if (value != this.itemSelected)
+                {
+                    this.stop = value;
+                    this.Refresh(null);
+                }
+            }
+        }
 
         public string Linie
         {
             get
             {
-                return this.stop.ShortName.ToString();
+                if (stop != null)
+                {
+                    return this.stop.Name;
+                }
+                return null;
             }
         }
 
+        public ObservableCollection<Stop> Stops
+        {
+            get
+            {
+                return stops;
+            }
+        }
         public ObservableCollection<ActualInfo> Items
         {
             get
@@ -37,18 +67,32 @@ namespace Padersprinter.ViewModels
 
         public RealTimeStopViewModel(int stopShortName)
         {
-            Timer refreshTimer = new Timer(Refresh, null, 60000, 60000);
             this.stopShortName = stopShortName;
             this.Refresh(null);
         }
 
         private async void Refresh(object state)
         {
-            if (this.stop != null)
+            if (this.stops.Count == 0)
             {
-                this.stop = await Parser.GetStopFromShortNameAsync(this.stopShortName);
+                Stop[] s = (await Parser.FindStopsByLocationAsync(new BasicPosition(8.768432611, 51.72760648), 100));
+                foreach (Stop item in s)
+                {
+                    this.Stops.Add(item);
+                }
             }
-            this.GetRealTimeInfo();
+
+            if (this.stop == null && this.ItemSelected == null)
+            {
+                this.stop = (await Parser.GetStopFromShortNameAsync(this.stopShortName));
+                this.OnPropertyChanged("Linie");
+                this.GetRealTimeInfo();
+            }
+            if (this.stop != null )
+            {
+                    this.GetRealTimeInfo();
+            }
+            
         }
 
         private async void GetRealTimeInfo()
