@@ -4,3 +4,9 @@ C:\Users\Sven\Desktop\Projects\PadersprinterService\PadersprinterService\obj\Deb
 C:\Users\Sven\Desktop\Projects\PadersprinterService\PadersprinterService\obj\Debug\PadersprinterService.dll
 C:\Users\Sven\Desktop\Projects\PadersprinterService\PadersprinterService\obj\Debug\PadersprinterService.pdb
 C:\Users\Sven\Desktop\Projects\PadersprinterService\PadersprinterService\bin\Debug\PadersprinterService.XML
+D:\Hackathon\PadersprinterService\bin\Debug\PadersprinterService.XML
+D:\Hackathon\PadersprinterService\bin\Debug\PadersprinterService.dll
+D:\Hackathon\PadersprinterService\bin\Debug\PadersprinterService.pdb
+D:\Hackathon\PadersprinterService\obj\Debug\PadersprinterService.csprojResolveAssemblyReference.cache
+D:\Hackathon\PadersprinterService\obj\Debug\PadersprinterService.dll
+D:\Hackathon\PadersprinterService\obj\Debug\PadersprinterService.pdb

@@ -61,12 +61,6 @@
             In case of a route, this is the route's ID.
             </summary>
         </member>
-        <member name="T:PadersprinterService.Stop">
-            <summary>
-            Haltestelle.
-            Ist z.B. Teil von http://www.padersprinter.de/internetservice/services/tripInfo/tripPassages
-            </summary>
-        </member>
         <member name="T:PadersprinterService.DataModel.TripInfo">
             <summary>
             Returned by http://www.padersprinter.de/internetservice/services/tripInfo/tripPassages
@@ -90,6 +84,12 @@
         <member name="P:PadersprinterService.DataModel.TripInfo.Old">
             <summary>
             Stops in the past.
+            </summary>
+        </member>
+        <member name="T:PadersprinterService.Stop">
+            <summary>
+            Haltestelle.
+            Ist z.B. Teil von http://www.padersprinter.de/internetservice/services/tripInfo/tripPassages
             </summary>
         </member>
         <member name="T:PadersprinterService.Parsing.Parser">
